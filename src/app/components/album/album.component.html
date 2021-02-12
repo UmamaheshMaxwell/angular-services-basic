@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Album Service</h2>
+    <button class="btn btn-primary" (click)="getAlbums()">Get Albums</button>
+    <br><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>userId</th>
+                <th>Id</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let album of albums">
+                <td>{{album.userId}}</td>
+                <td>{{album.id}}</td>
+                <td>{{album.title}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,16 @@
+What is a service ?
+-----------------------
+Service is a piece of re-usable code which can be used 
+across multiple components through out the application
+
+why to use service ?
+------------------
+1. Features that are independent of componets such as logging service can us re-used
+2. Database access
+3. Shared logic or Database
+
+Advantages
+----------
+1. Easy to test
+2. Easier to Debug
+3. we can re-use the code
