@@ -14,3 +14,73 @@ Advantages
 1. Easy to test
 2. Easier to Debug
 3. we can re-use the code
+
+
+Routing
+--------
+Routing allows us to move from one part of the appliciation to another part 
+or one view to another view 
+
+Router
+------
+A router is a seperate module in Angular. It has its own library 
+package named @angular/router
+
+Router module provides the necessary service providers and directives 
+for navigating thorugh application views
+
+usages
+----------
+1. Navigatin gto a specific view by typing a URL in the address bar
+2. pass optional parameters to the view 
+3. Bindthe clickable elements to the view and load the view 
+   when the user performs application tasks 
+4. Handles back and forward buttons of the browser
+5. Allows us dynamically load the view 
+6. Protects the routes from unauthorized users using gaurds
+
+Route
+-------
+Route tells angular router which view to display when a user 
+clicks a link or paste the URL into the browser addressbar
+
+Every Route consists of "path" and "Component".
+
+Routes
+-------
+Routes is an array os route Objects
+
+Router Outlet
+-------------
+
+Router outlet is a directive (<router-outlet>) that serves as a place holder
+
+Router link
+-------------
+Router Link is a directive that binds HTMl element to a Route
+
+RouterLink Avtive
+-----------------------
+It is a directive for adding or removing classes from HTML element 
+that is bound to "Roueter Link" 
+
+Activated Route
+----------------
+It is an object that represents the currently activated route 
+associated with the loaded components
+
+Router State
+--------------
+The current state os router includes the tree of the currently activated 
+routes together
+
+How to configure Angular Route
+------------------------------
+1. Set the <base href="/">
+2. Define routes for the view 
+3. Register the router services with Router
+4. Map the HTML element actions to route
+5. chosee where you want to diplay the view
+
+
+

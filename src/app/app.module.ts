@@ -7,6 +7,10 @@ import { ProductComponent } from './components/product/product.component';
 import { UserComponent } from './components/user/user.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { AlbumComponent } from './components/album/album.component';
+import { HomeComponent } from './components/home/home.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { AlbumComponent } from './components/album/album.component';
     ProductComponent,
     UserComponent,
     TodoComponent,
-    AlbumComponent
+    AlbumComponent,
+    HomeComponent,
+    ContactComponent,
+    AboutUsComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
