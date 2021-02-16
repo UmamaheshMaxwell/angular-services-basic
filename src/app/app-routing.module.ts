@@ -4,6 +4,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductComponent } from './components/product/product.component';
 
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'product', component: ProductComponent},
+  {path:'product/detail/:id/:name', component: ProductDetailsComponent},
   {path: 'about', component: AboutUsComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', component:ErrorComponent}

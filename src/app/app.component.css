@@ -1,0 +1,11 @@
+.navbar-nav>li>a, .navbar-brand {
+    color:#fff;
+}
+
+.navbar-nav>li>a:hover {
+    background-color: gray;
+}
+
+.navbar-nav>li>a :visited {
+    background-color: #337ab7;
+}

@@ -82,5 +82,23 @@ How to configure Angular Route
 4. Map the HTML element actions to route
 5. chosee where you want to diplay the view
 
+Activated Route
+---------------
+This is a service which has great deal of information, which keeps track of 
+the currentlt activated route associated with loaded component
+
+Navigate from one component to another
+-----------------------------------------
+1. Import Router from @angular/router
+2. constructor(private router: Router)
+3. router.navigate() / router.navigateByURL()
+
+To Access URL Paramaters
+-----------------------------
+// console.log(this.activatedRoute.snapshot.params)
+// console.log(this.activatedRoute.snapshot.paramMap.get('id'))
+// console.log(this.activatedRoute.snapshot.paramMap)
+// console.log(typeof this.activatedRoute.snapshot.params.id)
+
 
 

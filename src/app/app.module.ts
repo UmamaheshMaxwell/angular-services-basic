@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ErrorComponent } from './components/error/error.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { PeopleComponent } from './components/people/people.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ErrorComponent } from './components/error/error.component';
     HomeComponent,
     ContactComponent,
     AboutUsComponent,
-    ErrorComponent
+    ErrorComponent,
+    ProductDetailsComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
