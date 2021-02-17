@@ -1,8 +1,15 @@
 <div class="container">
     <h1>People Data</h1>
+    <br>
+    <label>ID</label>
+    <input type="text" class="form-control" name="id" [(ngModel)]="id"><br>
+    <label>Name</label>
+    <input type="text" class="form-control" name="name" [(ngModel)]="name"> <br>
+    <button class="btn btn-primary" (click)="getPeople()">Get People</button>&nbsp;&nbsp;
     <button class="btn btn-primary" (click)="addPeople()">Add People</button>&nbsp;&nbsp;
-    <button class="btn btn-primary">Update People</button>&nbsp;&nbsp;
-    <button class="btn btn-primary">Delete People</button>&nbsp;&nbsp;
+    <button class="btn btn-primary" (click)="updatePeople()">Update People</button>&nbsp;&nbsp;
+    <button class="btn btn-primary" (click)="deletePeople()">Delete People</button>&nbsp;&nbsp;
+    <br><br>
     <table class="table">
         <thead>
             <tr>

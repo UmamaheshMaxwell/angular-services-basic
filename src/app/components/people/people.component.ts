@@ -8,17 +8,47 @@ import { PeopleService } from 'src/app/services/people.service';
   styleUrls: ['./people.component.css']
 })
 export class PeopleComponent implements OnInit {
-
   people!: People[]
+  id!: number;
+  name!: string;
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit(): void {
-   this.peopleService.getPeople().subscribe(response => {
-    this.people = response as any
-   })
+    this.getPeople();
+  }
+  getPeople(){
+    this.peopleService.getPeople().subscribe(response => {
+      this.people = response as any
+     })
+  }
+  addPeople(){
+    let people = this.createPeopleObject();
+    this.peopleService.addPeople(people).subscribe(response =>{
+      console.log(response)
+      this.getPeople();
+    })
   }
 
-  addPeople(){
-    
+  updatePeople(){
+    let people = this.createPeopleObject();
+    this.peopleService.updatePeople(people).subscribe(response =>{
+      console.log(response)
+      this.getPeople();
+    })
+  }
+
+  deletePeople(){
+    this.peopleService.deletePeople(this.id).subscribe(response =>{
+      console.log(response)
+      this.getPeople();
+    })
+  }
+
+  createPeopleObject(){
+    let people = new People();
+    people.id = this.id;
+    people.name = this.name;
+
+    return people;
   }
 }
