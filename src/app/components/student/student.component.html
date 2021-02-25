@@ -1,0 +1,48 @@
+<div class="container">
+    <h1>Students</h1><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="text" class="form-control">
+                </td>
+                <td>
+                    <input type="text" class="form-control" [(ngModel)]="name">
+                </td>
+                <td>
+                    <input type="text" class="form-control" [(ngModel)]="email">
+                </td>
+                <td>
+                    <input type="text" class="form-control" [(ngModel)]="city">
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="addStudent()">Add</button>
+                </td>
+                <td>
+                    <button class="btn btn-primary">Update</button>
+                </td>
+            </tr>
+            <tr *ngFor="let student of students">
+                <td>{{student.Id}}</td>
+                <td>{{student.Name}}</td>
+                <td>{{student.Email}}</td>
+                <td>{{student.City}}</td>
+                <td>
+                    <button class="btn btn-danger">Remove</button>
+                </td>
+                <td>
+                    <button class="btn btn-warning">Update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

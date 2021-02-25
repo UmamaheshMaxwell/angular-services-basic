@@ -14,6 +14,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { PeopleComponent } from './components/people/people.component';
+import { StudentComponent } from './components/student/student.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PeopleComponent } from './components/people/people.component';
     AboutUsComponent,
     ErrorComponent,
     ProductDetailsComponent,
-    PeopleComponent
+    PeopleComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,
