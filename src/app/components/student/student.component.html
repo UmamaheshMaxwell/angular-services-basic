@@ -13,7 +13,7 @@
         <tbody>
             <tr>
                 <td>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [(ngModel)]="id" disabled>
                 </td>
                 <td>
                     <input type="text" class="form-control" [(ngModel)]="name">
@@ -28,7 +28,7 @@
                     <button class="btn btn-primary" (click)="addStudent()">Add</button>
                 </td>
                 <td>
-                    <button class="btn btn-primary">Update</button>
+                    <button class="btn btn-primary" (click)="updateStudent()">Update</button>
                 </td>
             </tr>
             <tr *ngFor="let student of students">
@@ -37,10 +37,10 @@
                 <td>{{student.Email}}</td>
                 <td>{{student.City}}</td>
                 <td>
-                    <button class="btn btn-danger">Remove</button>
+                    <button class="btn btn-danger" (click)="deleteStudent(student.Id)">Remove</button>
                 </td>
                 <td>
-                    <button class="btn btn-warning">Update</button>
+                    <button class="btn btn-warning" (click)="editStudent(student.Id)">Edit</button>
                 </td>
             </tr>
         </tbody>

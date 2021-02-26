@@ -15,6 +15,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { PeopleComponent } from './components/people/people.component';
 import { StudentComponent } from './components/student/student.component';
+import { PostComponent } from './components/post/post.component';
+import { NgxPaginationModule } from 'ngx-pagination'
 
 @NgModule({
   declarations: [
@@ -29,13 +31,15 @@ import { StudentComponent } from './components/student/student.component';
     ErrorComponent,
     ProductDetailsComponent,
     PeopleComponent,
-    StudentComponent
+    StudentComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

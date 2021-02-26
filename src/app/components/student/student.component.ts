@@ -10,35 +10,67 @@ import { StudentService } from 'src/app/services/student.service';
 export class StudentComponent implements OnInit {
 
   students!: Student[];
+  id!: any
   name!: string;
   email!: string
   city!: string
   constructor(private studentService: StudentService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getStudents()
   }
 
   getStudents(){
-    this.studentService.getStudents().subscribe(response => {
+    this.studentService.getStudents().subscribe(
+      response => {
       this.students = response as any
-    })
+      },
+      error => {
+        console.log(error)
+        console.log(error.ok)
+        console.log(error.status)
+        console.log(error.statusText)
+        console.log(error.message)
+      }
+    )
   }
 
   addStudent(){
     let student = {Name: this.name, Email: this.email, City: this.city}
-    console.log(student)
     this.studentService.addStudent(student).subscribe(response => {
-      console.log(response)
       this.getStudents()
       this.clearData();
     })
   }
 
+  editStudent(studentId:number){
+    this.studentService.getStudentById(studentId).subscribe(response =>{
+      let data:any = response
+      this.id = data[0].Id
+      this.name = data[0].Name
+      this.email = data[0].Email
+      this.city = data[0].City
+    })
+  }
+
+  updateStudent(){
+    let student = {Name: this.name, Email: this.email, City: this.city}
+    this.studentService.updateStudent(this.id, student).subscribe(response =>{
+      this.clearData();
+      this.getStudents()
+    })
+  }
+
+  deleteStudent(studentId:number){
+    this.studentService.deleteStudent(studentId).subscribe(response => {
+      this.getStudents()
+    })
+  }
+
   clearData(){
+    this.id = ''
     this.name = ''
     this.email = ''
     this.city = ''
   }
-
 }
