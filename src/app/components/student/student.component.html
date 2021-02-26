@@ -1,5 +1,16 @@
 <div class="container">
-    <h1>Students</h1><br>
+    <h3 class="text-center mt-4 mb-4">
+        Student List
+    </h3>
+    <div class="d-flex flex-row-reverse bd-highlight mb-2">
+        <div class="p-2 bd-highlight">
+            <select class="custom-select" (change)="onTableSizeChanges($event)">
+                <option *ngFor="let size of tableSizes" [ngValue]="size">
+                    {{size}}
+                </option>
+            </select>
+        </div>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -31,7 +42,11 @@
                     <button class="btn btn-primary" (click)="updateStudent()">Update</button>
                 </td>
             </tr>
-            <tr *ngFor="let student of students">
+            <tr *ngFor="let student of students | paginate: {
+                itemsPerPage:tableSize,
+                currentPage: page,
+                totalItems: count
+            }">
                 <td>{{student.Id}}</td>
                 <td>{{student.Name}}</td>
                 <td>{{student.Email}}</td>
@@ -45,4 +60,12 @@
             </tr>
         </tbody>
     </table>
+    <div class="d-flex justify-content-center">
+        <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"
+        >
+        </pagination-controls>
+    </div>
 </div>

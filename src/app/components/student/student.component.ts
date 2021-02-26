@@ -14,6 +14,12 @@ export class StudentComponent implements OnInit {
   name!: string;
   email!: string
   city!: string
+
+  page = 1
+  count = 0
+  tableSize= 3
+  tableSizes = [3,5,7,9]
+
   constructor(private studentService: StudentService) { }
 
   ngOnInit() {
@@ -72,5 +78,16 @@ export class StudentComponent implements OnInit {
     this.name = ''
     this.email = ''
     this.city = ''
+  }
+
+  onTableSizeChanges(event:any){
+    this.tableSize=event.target.value
+    this.page=1
+    this.getStudents();
+  }
+
+  onTableDataChange(event: any) {
+    this.page=event
+    this.getStudents()
   }
 }
