@@ -17,7 +17,8 @@ import { PeopleComponent } from './components/people/people.component';
 import { StudentComponent } from './components/student/student.component';
 import { PostComponent } from './components/post/post.component';
 import { NgxPaginationModule } from 'ngx-pagination'
-
+import { CookieService } from 'ngx-cookie-service';
+import { CookieComponent } from './components/cookie/cookie.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { NgxPaginationModule } from 'ngx-pagination'
     ProductDetailsComponent,
     PeopleComponent,
     StudentComponent,
-    PostComponent
+    PostComponent,
+    CookieComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { NgxPaginationModule } from 'ngx-pagination'
     FormsModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
