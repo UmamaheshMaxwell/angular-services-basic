@@ -18,7 +18,8 @@ import { StudentComponent } from './components/student/student.component';
 import { PostComponent } from './components/post/post.component';
 import { NgxPaginationModule } from 'ngx-pagination'
 import { CookieService } from 'ngx-cookie-service';
-import { CookieComponent } from './components/cookie/cookie.component'
+import { CookieComponent } from './components/cookie/cookie.component';
+import { ValidateComponent } from './components/validate/validate.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { CookieComponent } from './components/cookie/cookie.component'
     PeopleComponent,
     StudentComponent,
     PostComponent,
-    CookieComponent
+    CookieComponent,
+    ValidateComponent
   ],
   imports: [
     BrowserModule,

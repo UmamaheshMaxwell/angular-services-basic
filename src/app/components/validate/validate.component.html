@@ -1,0 +1,142 @@
+<div class="container">
+    <h1>Angular Validation</h1>
+    <form #userForm="ngForm" (ngSubmit)="getUserDetails(userForm)">
+        <label>FirstName : </label>
+        <input type="text" 
+               class="form-control" 
+               name="firstName" 
+               [(ngModel)]="firstName"
+               #firstNameControl="ngModel"
+               maxlength="5"
+               minlength="2"
+               required
+               
+        >
+        <div>
+            <!-- <table class="table">
+                    <tr>
+                        <th>Pristine</th>
+                        <td>{{firstNameControl.pristine}}</td>
+                    </tr><tr>
+                        <th>Dirty</th>
+                        <td>
+                            {{firstNameControl.dirty}}
+                        </td>
+                    </tr><tr>
+                        <th>Touched</th>
+                        <td>
+                            {{firstNameControl.touched}}
+                        </td>
+                    </tr><tr>
+                        <th>Untouched</th>
+                       <td>
+                            {{firstNameControl.untouched}}
+                       </td>
+                    </tr><tr>
+                       <th>Valid</th>
+                       <td>
+                            {{firstNameControl.valid}}
+                       </td>
+                    </tr><tr>
+                       <th>Invalid</th>
+                       <td>
+                            {{firstNameControl.invalid}}
+                       </td>
+                    </tr>
+            </table> -->
+            <label style="color: red;" *ngIf="firstNameControl.touched && firstNameControl.invalid">
+                FirstName is Required
+            </label>
+        </div><br>
+        <label>LastName : </label>
+        <input type="text" 
+               class="form-control"  
+               name="lastName"  
+               [(ngModel)]="lastName" 
+               #lastNameControl="ngModel"
+               required
+        >
+        <div>
+            <!-- <table class="table">
+                <tr>
+                    <th>Pristine</th>
+                    <td>{{lastNameControl.pristine}}</td>
+                </tr><tr>
+                    <th>Dirty</th>
+                    <td>
+                        {{lastNameControl.dirty}}
+                    </td>
+                </tr><tr>
+                    <th>Touched</th>
+                    <td>
+                        {{lastNameControl.touched}}
+                    </td>
+                </tr><tr>
+                    <th>Untouched</th>
+                   <td>
+                        {{lastNameControl.untouched}}
+                   </td>
+                </tr><tr>
+                   <th>Valid</th>
+                   <td>
+                        {{lastNameControl.valid}}
+                   </td>
+                </tr><tr>
+                   <th>Invalid</th>
+                   <td>
+                        {{lastNameControl.invalid}}
+                   </td>
+                </tr>
+        </table> -->
+        <label style="color: red;" *ngIf="lastNameControl.touched && lastNameControl.invalid">
+            LastName is Required
+        </label>
+        </div><br>
+        <label>Email : </label>
+        <input type="text" 
+               class="form-control" 
+               name="email" 
+               [(ngModel)]="email"
+               #emailControl="ngModel"
+               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+               required
+        >
+        <div>
+            <!-- <table class="table">
+                <tr>
+                    <th>Pristine</th>
+                    <td>{{emailControl.pristine}}</td>
+                </tr><tr>
+                    <th>Dirty</th>
+                    <td>
+                        {{emailControl.dirty}}
+                    </td>
+                </tr><tr>
+                    <th>Touched</th>
+                    <td>
+                        {{emailControl.touched}}
+                    </td>
+                </tr><tr>
+                    <th>Untouched</th>
+                   <td>
+                        {{emailControl.untouched}}
+                   </td>
+                </tr><tr>
+                   <th>Valid</th>
+                   <td>
+                        {{emailControl.valid}}
+                   </td>
+                </tr><tr>
+                   <th>Invalid</th>
+                   <td>
+                        {{emailControl.invalid}}
+                   </td>
+                </tr>
+        </table> -->
+        <label style="color: red;" *ngIf="emailControl.touched && emailControl.invalid">
+            Email is Required
+        </label>
+        </div><br><br>
+        <button class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+    </form>
+</div>
